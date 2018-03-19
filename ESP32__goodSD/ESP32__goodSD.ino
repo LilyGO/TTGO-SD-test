@@ -1,6 +1,6 @@
 
 #include <mySD.h>
-#define LED_BUILTIN 21
+#define LED_BUILTIN 22  //Blink pin 
 File root;
 
 void setup()
@@ -9,7 +9,7 @@ void setup()
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.print("Initializing SD card...");
   /* initialize SD library with SPI pins */
- if (!SD.begin(13,15,2,14)) {            //T1:13,15,2,14  T2: 23,5,19,18
+ if (!SD.begin(13,15,2,14)) {            //T1 T3:13,15,2,14  
     Serial.println("initialization failed!");
     return;
   }
