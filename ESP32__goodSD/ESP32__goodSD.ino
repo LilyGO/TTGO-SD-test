@@ -9,7 +9,7 @@ void setup()
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.print("Initializing SD card...");
   /* initialize SD library with SPI pins */
- if (!SD.begin(13,15,2,14)) {            //T1 T3:13,15,2,14  
+ if (!SD.begin(13,15,2,14)) {            //T1:13,15,2,14  T2: 23,5,19,18 M5：4,23,19,18 uint8_t csPin, int8_t mosi, int8_t miso, int8_t sck
     Serial.println("initialization failed!");
     return;
   }
