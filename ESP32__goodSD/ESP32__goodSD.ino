@@ -1,12 +1,11 @@
 
 #include <mySD.h>
-#define LED_BUILTIN 22  //Blink pin 
+
 File root;
 
 void setup()
 {
   Serial.begin(115200);
-  pinMode(LED_BUILTIN, OUTPUT);
   Serial.print("Initializing SD card...");
   /* initialize SD library with SPI pins */
  if (!SD.begin(13,15,2,14)) {            //T1:13,15,2,14  T2: 23,5,19,18 M5：4,23,19,18 uint8_t csPin, int8_t mosi, int8_t miso, int8_t sck
@@ -55,10 +54,7 @@ void setup()
 
 void loop()
 {
-   digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);                       // wait for a second
+
 }
 
 void printDirectory(File dir, int numTabs) {
